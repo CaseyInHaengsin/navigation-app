@@ -1,12 +1,22 @@
-import React from 'react';
-import { Text } from 'react-native-elements';
+import React, { useState }from 'react';
+import { Text, SearchBar } from 'react-native-elements';
 import { StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
+
+
 
 const HomeScreen = () => {
+    const [address, setAddress] = useState('')
+    console.log(address)
     return (
-        <>
-            <Text h1>Hello World</Text>
-        </>
+        <SafeAreaView>
+            <SearchBar  
+                placeholder="Enter address"
+                onChangeText={setAddress}
+                value={address}
+            />
+            
+        </SafeAreaView>
     )
 }
 
